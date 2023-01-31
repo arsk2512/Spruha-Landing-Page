@@ -1,0 +1,79 @@
+@media only screen and (max-width:920px) {
+
+  /*Header*/
+  .toggle-menu,
+  #closeMenu {
+    margin: auto 20px auto 10px;
+  }
+
+  .selectAndinput .chooseOpt,
+  header .right-sec div:nth-child(3) {
+    display: none;
+  }
+
+  .selectAndinput input {
+    width: 110px;
+    padding-left: 0.5rem;
+  }
+
+  .selectAndinput input::placeholder {
+    font-size: 11px;
+  }
+
+  header .right-sec {
+    gap: 0.5rem;
+    margin-right: 1rem;
+  }
+
+  /*Body*/
+  main {
+    padding: 0 1rem;
+  }
+
+  main .titleSec {
+    padding: 1.5rem 0;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  main .mainSec {
+    flex-wrap: wrap;
+  }
+
+  .mainSec .left-sideCards,
+  .mainSec .right-sideCards{
+    width: 100% !important;
+  }
+
+  .mainSec .left-sideCards .row2 {
+    grid-template-columns: auto auto;
+  }
+
+  .mainSec .left-sideCards .row3 .card {
+    height: auto;
+  }
+
+  .mainSec .left-sideCards .row4 {
+    grid-template-columns: auto;
+    row-gap: 20px;
+  }
+
+  .mainSec .left-sideCards .row4 .card1 .card-title,
+  .mainSec .left-sideCards .row4 .card1 .card-body,
+  .mainSec .right-sideCards .card4 .card-title,
+  .mainSec .right-sideCards .card4 .card-footer {
+    justify-content: space-between;
+  }
+
+  .mainSec .left-sideCards .row5 .card .card-body {
+    overflow-x: auto;
+  }
+
+  .mainSec .right-sideCards .card2 {
+    height: 200px;
+  }
+
+  footer p {
+    margin-left: 200px;
+  }
+}

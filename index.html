@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="RWD.css">
+  <link rel="stylesheet" href="rwd2.css">
+
+  <!--font awesome cdn for rotating settings icon-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!--Google icons CDN-->
+
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+  <!--Google Fonts-->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:wght@400;500;700&display=swap"
+    rel="stylesheet">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <header id="header" class="d-flex">
+
+    <div class="left-sec d-flex">
+      <div onclick="toggleMenu()" class="toggle-menu">
+        <span id="openMenu" class="material-symbols-outlined open-menu">
+          menu_open
+        </span>
+      </div>
+      <span onclick="" id="closeMenu" class="material-symbols-outlined close-menu">
+        menu
+      </span>
+      <div class="selectAndinput d-flex">
+        <div class="chooseOpt" onclick="expandless()">
+          <p>Choose one</p>
+          <span class="material-symbols-outlined">
+            expand_more
+          </span>
+          <span class="material-symbols-outlined expandLess">
+            expand_less
+          </span>
+        </div>
+        <input type="text" placeholder="Search for anything...">
+        <div class="searchicon-box d-flex">
+          <span class="material-symbols-outlined">
+            search
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="right-sec d-flex">
+      <div class="change-modes">
+        <a href="#">
+          <span onclick="changeThemeFunc()" id="bgdark" class="material-symbols-outlined">
+            dark_mode
+          </span>
+          <span onclick="changeThemeFunc()" id="bglight" class="material-symbols-outlined">
+            light_mode
+          </span>
+        </a>
+      </div>
+
+      <div class="country">
+        <a href="#">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <circle cx="256" cy="256" r="256" fill="#f0f0f0"></circle>
+            <g fill="#0052b4">
+              <path
+                d="M52.92 100.142c-20.109 26.163-35.272 56.318-44.101 89.077h133.178L52.92 100.142zM503.181 189.219c-8.829-32.758-23.993-62.913-44.101-89.076l-89.075 89.076h133.176zM8.819 322.784c8.83 32.758 23.993 62.913 44.101 89.075l89.074-89.075H8.819zM411.858 52.921c-26.163-20.109-56.317-35.272-89.076-44.102v133.177l89.076-89.075zM100.142 459.079c26.163 20.109 56.318 35.272 89.076 44.102V370.005l-89.076 89.074zM189.217 8.819c-32.758 8.83-62.913 23.993-89.075 44.101l89.075 89.075V8.819zM322.783 503.181c32.758-8.83 62.913-23.993 89.075-44.101l-89.075-89.075v133.176zM370.005 322.784l89.075 89.076c20.108-26.162 35.272-56.318 44.101-89.076H370.005z">
+              </path>
+            </g>
+            <g fill="#d80027">
+              <path
+                d="M509.833 222.609H289.392V2.167A258.556 258.556 0 00256 0c-11.319 0-22.461.744-33.391 2.167v220.441H2.167A258.556 258.556 0 000 256c0 11.319.744 22.461 2.167 33.391h220.441v220.442a258.35 258.35 0 0066.783 0V289.392h220.442A258.533 258.533 0 00512 256c0-11.317-.744-22.461-2.167-33.391z">
+              </path>
+              <path
+                d="M322.783 322.784L437.019 437.02a256.636 256.636 0 0015.048-16.435l-97.802-97.802h-31.482v.001zM189.217 322.784h-.002L74.98 437.019a256.636 256.636 0 0016.435 15.048l97.802-97.804v-31.479zM189.217 189.219v-.002L74.981 74.98a256.636 256.636 0 00-15.048 16.435l97.803 97.803h31.481zM322.783 189.219L437.02 74.981a256.328 256.328 0 00-16.435-15.047l-97.802 97.803v31.482z">
+              </path>
+            </g>
+          </svg>
+        </a>
+      </div>
+
+      <div onclick="goFullscreen()">
+        <a href="#">
+          <span class="material-symbols-rounded">
+            fullscreen
+          </span>
+        </a>
+      </div>
+
+      <div class="pos-rel">
+        <a href="#">
+          <span class="material-symbols-outlined ">
+            notifications
+          </span>
+          <span class="pos-absol notification-badge d-flex">4</span>
+        </a>
+      </div>
+
+      <div class="pos-rel">
+        <a href="#">
+          <span class="material-symbols-outlined">
+            chat_bubble
+          </span>
+          <span class="pos-absol message-badge d-flex">6</span>
+        </a>
+      </div>
+
+      <div class="userimg">
+        <a href="#">
+          <img src="img/userimg.jpg" alt="">
+        </a>
+      </div>
+
+      <div>
+        <a href="#">
+          <span class="material-symbols-outlined">
+            menu
+          </span>
+        </a>
+      </div>
+
+      <div class="setting">
+        <a href="#">
+          <i class="fa fa-cog fa-spin"></i>
+        </a>
+      </div>
+    </div>
+
+
+
+  </header>
+
+  <nav id="sideBar" class="sidebar">
+    <div class="logo-area">
+      <a href="#">
+        <img id="fullLogo" class="full-logo" src="img/full-logo.png" alt="">
+      </a>
+      <a href="#">
+        <img id="logo" class="logo" src="img/logo.png" alt="">
+      </a>
+    </div>
+    <ul class="sideBarUL">
+      <li class="nav-title"> Dashboard</li>
+      <li class="listItems active">
+        <a href="#" class="list-link">
+          <span class="curveTop"></span>
+          <span class="curveBottom"></span>
+          <span class="icon-circle">
+            <span class="material-symbols-outlined">
+              home
+            </span>
+          </span>
+          <p class="label">Dashboard</p>
+        </a>
+      </li>
+      <li class="listItems">
+        <a href="#" class="list-link openSubList" onclick="toggleSubList()">
+          <span class="curveTop"></span>
+          <span class="curveBottom"></span>
+
+          <span class="icon-circle">
+            <span class="material-symbols-outlined">
+              account_balance_wallet
+            </span>
+          </span>
+          <p class="label">CryptoCurrencies</p>
+          <p class="arrow"></p>
+        </a>
+        <ul class="sub-nav">
+          <li>
+            <a href="#" class="sub-list-link">
+              <span class="material-symbols-rounded">
+                arrow_right
+              </span>
+              <p>Dashboard</p>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="sub-list-link">
+              <span class="material-symbols-rounded">
+                arrow_right
+              </span>
+              <p>Marketcap</p>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="sub-list-link">
+              <span class="material-symbols-rounded">
+                arrow_right
+              </span>
+              <p>Currency exchange</p>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="sub-list-link">
+              <span class="material-symbols-rounded">
+                arrow_right
+              </span>
+              <p>But & Sell</p>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="sub-list-link">
+              <span class="material-symbols-rounded">
+                arrow_right
+              </span>
+              <p>Wallet</p>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="sub-list-link">
+              <span class="material-symbols-rounded">
+                arrow_right
+              </span>
+              <p>Transactions</p>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class="listItems">
+        <a href="#" class="list-link">
+          <span class="curveTop"></span>
+          <span class="curveBottom"></span>
+          <span class="icon-circle">
+            <span class="material-symbols-outlined">
+              shopping_cart
+            </span>
+          </span>
+          <p class="label">ECommerce</p>
+        </a>
+      </li>
+      <li class="nav-title"> Landingpage</li>
+      <li class="listItems">
+        <a href="#" class="list-link">
+          <span class="curveTop"></span>
+          <span class="curveBottom"></span>
+          <span class="icon-circle">
+            <span class="material-symbols-outlined">
+              web
+            </span>
+          </span>
+          <p class="label">Landingpage</p>
+        </a>
+      </li>
+      <li class="nav-title"> Applications</li>
+      <li class="listItems">
+        <a href="#" class="list-link">
+          <span class="curveTop"></span>
+          <span class="curveBottom"></span>
+          <span class="icon-circle">
+            <span class="material-symbols-outlined">
+              apps
+            </span>
+          </span>
+          <p class="label">Apps</p>
+        </a>
+      </li>
+      <li class="nav-title"> Components</li>
+      <li class="listItems">
+        <a href="#" class="list-link">
+          <span class="curveTop"></span>
+          <span class="curveBottom"></span>
+          <span class="icon-circle">
+            <span class="material-symbols-outlined">
+              package
+            </span>
+          </span>
+          <p class="label">Elements</p>
+        </a>
+      </li>
+      <li class="listItems">
+        <a href="#" class="list-link">
+          <span class="curveTop"></span>
+          <span class="curveBottom"></span>
+          <span class="icon-circle">
+            <span class="material-symbols-outlined">
+              business_center
+            </span>
+          </span>
+          <p class="label">AdvanceUI</p>
+        </a>
+      </li>
+      <li class="nav-title"> other pages</li>
+      <li class="listItems">
+        <a href="#" class="list-link">
+          <span class="curveTop"></span>
+          <span class="curveBottom"></span>
+          <span class="icon-circle">
+            <span class="material-symbols-outlined">
+              dynamic_feed
+            </span>
+          </span>
+          <p class="label">Pages</p>
+        </a>
+      </li>
+      <li class="listItems">
+        <a href="#" class="list-link">
+          <span class="curveTop"></span>
+          <span class="curveBottom"></span>
+          <span class="icon-circle">
+            <span class="material-symbols-outlined">
+              list
+            </span>
+          </span>
+          <p class="label">Utilities</p>
+        </a>
+      </li>
+      <li class="listItems">
+        <a href="#" class="list-link">
+          <span class="curveTop"></span>
+          <span class="curveBottom"></span>
+          <span class="icon-circle">
+            <span class="material-symbols-outlined">
+              lock
+            </span>
+          </span>
+          <p class="label">Authentication</p>
+        </a>
+      </li>
+      <li class="nav-title"> Forms & Charts</li>
+      <li class="listItems">
+        <a href="#" class="list-link">
+          <span class="curveTop"></span>
+          <span class="curveBottom"></span>
+          <span class="icon-circle">
+            <span class="material-symbols-outlined">
+              description
+            </span>
+          </span>
+          <p class="label">Forms</p>
+          <span class=" nav-badge forms-badge">7</span>
+        </a>
+      </li>
+      <li class="listItems">
+        <a href="#" class="list-link">
+          <span class="curveTop"></span>
+          <span class="curveBottom"></span>
+          <span class="icon-circle">
+            <span class="material-symbols-outlined">
+              monitoring
+            </span>
+          </span>
+          <p class="label">Charts</p>
+          <span class="nav-badge charts-badge">5</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <main id="main">
+    <div class="titleSec">
+      <div class="left">
+        <div class="heading">
+          <h2> Welcome To Dashboard
+          </h2>
+        </div>
+        <ol class="Db-option">
+          <li class="home">Home</li>
+          <li>/</li>
+          <li class="">Project Dashboard</li>
+        </ol>
+      </div>
+      <div class="right">
+        <button class="import">
+          <span class="material-symbols-outlined">
+            download
+          </span>
+          Import
+        </button>
+        <button class="filter">
+          <span class="material-symbols-outlined">
+            filter_alt
+          </span>
+          Filter
+        </button>
+        <button class="downloadReport">
+          <span class="material-symbols-outlined">
+            cloud_download
+          </span>
+          Download Report
+        </button>
+      </div>
+    </div>
+    <section class="mainSec">
+      <div class="left-sideCards">
+        <div class="row1">
+          <div class=" card1">
+            <div class="imgArea">
+              <img src="img/card1.png" alt="">
+            </div>
+            <div class="text-area">
+              <h2>Sonia Taylor!</h2>
+              <p>You have two projects to finish, you had completed <span>57%</span> from your monthly level, keep going
+                to your level</p>
+            </div>
+          </div>
+        </div>
+        <div class="row2">
+          <div class="card card1">
+            <div class="card-title">
+              <label>Total revenue</label>
+              <p>Previous month vs this month</p>
+            </div>
+            <div class="card-body">
+              <h4>$5,900.00</h4>
+              <p><span>55% </span>Higher</p>
+            </div>
+            <div class="icon">
+              <svg class="text-primary" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24"
+                viewBox="0 0 24 24" width="24">
+                <g>
+                  <rect height="14" opacity=".3" width="14" x="5" y="5"></rect>
+                  <g>
+                    <rect fill="none" height="24" width="24"></rect>
+                    <g>
+                      <path
+                        d="M19,3H5C3.9,3,3,3.9,3,5v14c0,1.1,0.9,2,2,2h14c1.1,0,2-0.9,2-2V5C21,3.9,20.1,3,19,3z M19,19H5V5h14V19z">
+                      </path>
+                      <rect height="5" width="2" x="7" y="12"></rect>
+                      <rect height="10" width="2" x="15" y="7"></rect>
+                      <rect height="3" width="2" x="11" y="14"></rect>
+                      <rect height="2" width="2" x="11" y="10"></rect>
+                    </g>
+                  </g>
+                </g>
+              </svg>
+            </div>
+          </div>
+          <div class="card card2">
+            <div class="card-title">
+              <label>New Employees</label>
+              <p>Employees joined this month</p>
+            </div>
+            <div class="card-body">
+              <h4>15</h4>
+              <p><span>5% </span>Incresed</p>
+            </div>
+            <div class="icon">
+              <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+                <path d="M0 0h24v24H0V0z" fill="none"></path>
+                <path
+                  d="M12 4c-4.41 0-8 3.59-8 8 0 1.82.62 3.49 1.64 4.83 1.43-1.74 4.9-2.33 6.36-2.33s4.93.59 6.36 2.33C19.38 15.49 20 13.82 20 12c0-4.41-3.59-8-8-8zm0 9c-1.94 0-3.5-1.56-3.5-3.5S10.06 6 12 6s3.5 1.56 3.5 3.5S13.94 13 12 13z"
+                  opacity=".3"></path>
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM7.07 18.28c.43-.9 3.05-1.78 4.93-1.78s4.51.88 4.93 1.78C15.57 19.36 13.86 20 12 20s-3.57-.64-4.93-1.72zm11.29-1.45c-1.43-1.74-4.9-2.33-6.36-2.33s-4.93.59-6.36 2.33C4.62 15.49 4 13.82 4 12c0-4.41 3.59-8 8-8s8 3.59 8 8c0 1.82-.62 3.49-1.64 4.83zM12 6c-1.94 0-3.5 1.56-3.5 3.5S10.06 13 12 13s3.5-1.56 3.5-3.5S13.94 6 12 6zm0 5c-.83 0-1.5-.67-1.5-1.5S11.17 8 12 8s1.5.67 1.5 1.5S12.83 11 12 11z">
+                </path>
+              </svg>
+            </div>
+          </div>
+          <div class="card card3">
+            <div class="card-title">
+              <label>Total Expenses</label>
+              <p>Previous month vs this month</p>
+            </div>
+            <div class="card-body">
+              <h4>$8,500</h4>
+              <p><span>12% </span>Decrease</p>
+            </div>
+            <div class="icon">
+              <svg class="text-primary" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+                <path d="M0 0h24v24H0V0z" fill="none"></path>
+                <path
+                  d="M12 4c-4.41 0-8 3.59-8 8s3.59 8 8 8 8-3.59 8-8-3.59-8-8-8zm1.23 13.33V19H10.9v-1.69c-1.5-.31-2.77-1.28-2.86-2.97h1.71c.09.92.72 1.64 2.32 1.64 1.71 0 2.1-.86 2.1-1.39 0-.73-.39-1.41-2.34-1.87-2.17-.53-3.66-1.42-3.66-3.21 0-1.51 1.22-2.48 2.72-2.81V5h2.34v1.71c1.63.39 2.44 1.63 2.49 2.97h-1.71c-.04-.97-.56-1.64-1.94-1.64-1.31 0-2.1.59-2.1 1.43 0 .73.57 1.22 2.34 1.67 1.77.46 3.66 1.22 3.66 3.42-.01 1.6-1.21 2.48-2.74 2.77z"
+                  opacity=".3"></path>
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.31-8.86c-1.77-.45-2.34-.94-2.34-1.67 0-.84.79-1.43 2.1-1.43 1.38 0 1.9.66 1.94 1.64h1.71c-.05-1.34-.87-2.57-2.49-2.97V5H10.9v1.69c-1.51.32-2.72 1.3-2.72 2.81 0 1.79 1.49 2.69 3.66 3.21 1.95.46 2.34 1.15 2.34 1.87 0 .53-.39 1.39-2.1 1.39-1.6 0-2.23-.72-2.32-1.64H8.04c.1 1.7 1.36 2.66 2.86 2.97V19h2.34v-1.67c1.52-.29 2.72-1.16 2.73-2.77-.01-2.2-1.9-2.96-3.66-3.42z">
+                </path>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="row3">
+          <div class="card">
+            <div class="card-title">
+              <label>Project Budget</label>
+              <p>The Project Budget is a tool used by project managers to estimate the cost of a project</p>
+            </div>
+            <div class="card-body">
+              <div>
+                <img src="img/graphImg.png" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row4">
+          <div class="card card1">
+            <div class="card-title">
+              <div class="left">
+                <label for="">Today Tasks</label>
+                <p>UX UI & Backend Development.</p>
+              </div>
+              <div class="right">
+                <div class="project">
+                  <span></span>
+                  <p>Project</p>
+                </div>
+                <div class="inprogress">
+                  <span></span>
+                  <p>Inprogress</p>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="left">
+                <label>Project-Budget</label>
+                <h4>$5,240</h4>
+                <p>May 28- June 01 (2018)</p>
+              </div>
+              <div class="right">
+                <div class="round-progress">
+                  <div class="inner-circle">75%</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card card2">
+            <div class="card-title">
+              <label>Top Inquiries</label>
+              <p>project work involves a group of students investigating.</p>
+            </div>
+            <div class="card-body">
+              <div class="row row1">
+                <label>Brand identity</label>
+                <div class="progress-bar">
+                </div>
+                <p><span class="material-symbols-rounded">
+                    arrow_upward
+                  </span>24.75%</p>
+              </div>
+              <div class="row row2">
+                <label>UI & UX design</label>
+                <div class="progress-bar">
+
+                </div>
+                <p><span class="material-symbols-rounded">
+                    arrow_downward
+                  </span>12.34%</p>
+              </div>
+              <div class="row row3">
+                <label>Product design</label>
+                <div class="progress-bar">
+
+                </div>
+                <p><span class="material-symbols-rounded">
+                    arrow_upward
+                  </span>13.75%</p>
+              </div>
+              <div class="row row4">
+                <label>React design</label>
+                <div class="progress-bar">
+
+                </div>
+                <p><span class="material-symbols-rounded">
+                    arrow_downward
+                  </span>20.41%</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row5">
+          <div class="card">
+            <div class="card-title">
+              <label>Tasks</label>
+              <p>A task is accomplished by a set deadline, and must contribute toward work-realated objectives.</p>
+            </div>
+            <div class="card-body">
+              <table class="task-table">
+                <thead>
+                  <tr>
+                    <th>Task</th>
+                    <th>team</th>
+                    <th>open task</th>
+                    <th>prority</th>
+                    <th>status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <input id="row1checkbox1" type="checkbox">
+                      <label for="row1checkbox1"></label>
+                      Evaluating the design
+                    </td>
+                    <td class="team-column">
+                      <div class="member1">
+                        <img src="img/userimg.jpg" alt="">
+                      </div>
+                      <div class="member2">
+                        <img src="img/userimg2.jpg" alt="">
+                      </div>
+                      <div class="member3">
+                        <img src="img/userimg3.jpg" alt="">
+                      </div>
+                      <div class="member4">
+                        <img src="img/userimg4.jpg" alt="">
+                      </div>
+                    </td>
+                    <td class="openTask-column">37</td>
+                    <td class="prority-column">High</td>
+                    <td class="approvalStatus-column">
+                      <div>Completed</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input id="row2checkbox1" type="checkbox">
+                      <label for="row2checkbox1"></label>
+                      Generate ideas for design
+                    </td>
+                    <td class="team-column">
+                      <div class="member1">
+                        <img src="img/userimg4.jpg" alt="">
+                      </div>
+                      <div class="member2">
+                        <img src="img/userimg3.jpg" alt="">
+                      </div>
+                      <div class="member3">
+                        <img src="img/userimg2.jpg" alt="">
+                      </div>
+                      <div class="member4">
+                        <img src="img/userimg.jpg" alt="">
+                      </div>
+                    </td>
+                    <td class="openTask-column">37</td>
+                    <td class="prority-column">Normal</td>
+                    <td class="approvalStatus-column">
+                      <div>pending</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input id="row3checkbox1" type="checkbox">
+                      <label for="row3checkbox1"></label>
+                      Define the problem
+                    </td>
+                    <td class="team-column">
+                      <div class="member1">
+                        <img src="img/userimg4.jpg" alt="">
+                      </div>
+                      <div class="member2">
+                        <img src="img/userimg.jpg" alt="">
+                      </div>
+                      <div class="member3">
+                        <img src="img/userimg2.jpg" alt="">
+                      </div>
+                      <div class="member4">
+                        <img src="img/userimg4.jpg" alt="">
+                      </div>
+                    </td>
+                    <td class="openTask-column">37</td>
+                    <td class="prority-column">Low</td>
+                    <td class="approvalStatus-column">
+                      <div>Completed</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input id="row4checkbox1" type="checkbox">
+                      <label for="row4checkbox1"></label>
+                      Empathize with users
+                    </td>
+                    <td class="team-column">
+                      <div class="member1">
+                        <img src="img/userimg2.jpg" alt="">
+                      </div>
+                      <div class="member2">
+                        <img src="img/userimg.jpg" alt="">
+                      </div>
+                      <div class="member3">
+                        <img src="img/userimg4.jpg" alt="">
+                      </div>
+                      <div class="member4">
+                        <img src="img/userimg3.jpg" alt="">
+                      </div>
+                    </td>
+                    <td class="openTask-column">37</td>
+                    <td class="prority-column">high</td>
+                    <td class="approvalStatus-column">
+                      <div>Rejected</div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="right-sideCards">
+        <div class="card card1">
+          <div class="card-title">
+            <label for="">Recent Transactions</label>
+            <p>Project where development work is on completion</p>
+          </div>
+          <div class="card-body">
+            <div class="row row1">
+              <div class="left-side">
+                <div class="profile-container">
+                  <img src="img/userimg.jpg" alt="">
+                </div>
+                <div class="profile-about">
+                  <h6>Flicker</h6>
+                  <p>App improvement</p>
+                </div>
+              </div>
+              <div class="right-side">
+                <h5>$45.234
+                  <span class="material-symbols-outlined">
+                    trending_up
+                  </span>
+                </h5>
+                <p class="transaction-date">12 Jan 2020</p>
+              </div>
+            </div>
+            <div class="row row2">
+              <div class="left-side">
+                <div class="profile-container">
+                  <img src="img/userimg2.jpg" alt="">
+                </div>
+                <div class="profile-about">
+                  <h6>Intoxic</h6>
+                  <p>Milestone</p>
+                </div>
+              </div>
+              <div class="right-side">
+                <h5>$23.452
+                  <span class="material-symbols-outlined">
+                    trending_down
+                  </span>
+                </h5>
+                <p class="transaction-date">23 Jan 2020</p>
+              </div>
+            </div>
+            <div class="row row3">
+              <div class="left-side">
+                <div class="profile-container">
+                  <img src="img/userimg3.jpg" alt="">
+                </div>
+                <div class="profile-about">
+                  <h6>Digiwatt</h6>
+                  <p>Sales executive</p>
+                </div>
+              </div>
+              <div class="right-side">
+                <h5>$78.001
+                  <span class="material-symbols-outlined">
+                    trending_down
+                  </span>
+                </h5>
+                <p class="transaction-date">4 Apr 2020</p>
+              </div>
+            </div>
+            <div class="row row4">
+              <div class="left-side">
+                <div class="profile-container">
+                  <img src="img/userimg4.jpg" alt="">
+                </div>
+                <div class="profile-about">
+                  <h6>Flicker</h6>
+                  <p>Milestone2</p>
+                </div>
+              </div>
+              <div class="right-side">
+                <h5>$37.285
+                  <span class="material-symbols-outlined">
+                    trending_up
+                  </span>
+                </h5>
+                <p class="transaction-date">4 Apr 2020</p>
+              </div>
+            </div>
+            <div class="row row5">
+              <div class="left-side">
+                <div class="profile-container">
+                  <img src="img/userimg2.jpg" alt="">
+                </div>
+                <div class="profile-about">
+                  <h6>Flicker</h6>
+                  <p>App improvement</p>
+                </div>
+              </div>
+              <div class="right-side">
+                <h5>$25.341
+                  <span class="material-symbols-outlined">
+                    trending_down
+                  </span>
+                </h5>
+                <p class="transaction-date">4 Apr 2020</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card card2">
+          <div class="left">
+            <div class="card-title">
+              <label>Project Launch</label>
+              <p>the project is going to launch</p>
+            </div>
+            <h4>145 days</h4>
+            <h5>12 Monday, Oct 2020</h5>
+          </div>
+          <div class="right">
+            <div>
+              <img src="img/rocket.png" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="card card3">
+          <div class="card-title">
+            <label>On going Projects</label>
+            <p>Projects where development work is on completion</p>
+          </div>
+          <div class="card-body">
+            <div class="box">
+              <div class="box-title">
+                <div class="profile-container">
+                  <div class="member1">
+                    <img src="img/userimg4.jpg" alt="">
+                  </div>
+                  <div class="member2">
+                    <img src="img/userimg3.jpg" alt="">
+                  </div>
+                  <div class="member3">
+                    <img src="img/userimg2.jpg" alt="">
+                  </div>
+                  <div class="member4">
+                    <img src="img/userimg.jpg" alt="">
+                  </div>
+                </div>
+                <p>Design team</p>
+              </div>
+              <div class="box-body">
+                <div class="left">
+                  <span>25 August 2020</span>
+                  <p>Mobile app design</p>
+                </div>
+                <div class="right">
+                  <div class="progress-circle">
+                    <div class="inner-circle"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="box">
+              <div class="box-title">
+                <div class="profile-container">
+                  <div class="member1">
+                    <img src="img/userimg4.jpg" alt="">
+                  </div>
+                  <div class="member2">
+                    <img src="img/userimg3.jpg" alt="">
+                  </div>
+                  <div class="member3">
+                    <img src="img/userimg2.jpg" alt="">
+                  </div>
+                  <div class="member4">
+                    <img src="img/userimg.jpg" alt="">
+                  </div>
+                </div>
+                <p>Design team</p>
+              </div>
+              <div class="box-body">
+                <div class="left">
+                  <span>12 June 2020</span>
+                  <p>Website Redesign</p>
+                </div>
+                <div class="right">
+                  <div class="progress-circle">
+                    <div class="inner-circle"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card card4">
+          <div class="card-title">
+            <div class="left">
+              <label>Website design</label>
+              <p>Task completed: 7/10</p>
+            </div>
+            <div class="right">
+              <p>Running</p>
+            </div>
+          </div>
+          <div class="progressBar-row">
+            <div class="progressbar bar1"></div>
+            <div class="progressbar bar2"></div>
+            <div class="progressbar bar3"></div>
+            <div class="progressbar bar4"></div>
+            <div class="progressbar bar5"></div>
+            <div class="progressbar bar6"></div>
+            <div class="progressbar bar7"></div>
+            <div class="progressbar bar8"></div>
+            <div class="progressbar bar9"></div>
+            <div class="progressbar bar10"></div>
+          </div>
+          <div class="card-footer">
+            <div class="left">
+              <div class="line1">
+                <span>Client :</span>
+                <p>John Doe</p>
+              </div>
+              <div class="line2">
+                <span>Deadline : </span>
+                <p>25 Dec 2020</p>
+              </div>
+            </div>
+            <div class="right">
+              <div>
+                <img src="img/final-card.png" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      Copyright &copy; 2022 <span>Spruha.</span> Designed by <Span>Spruha</Span> All rights reserved.
+    </p>
+  </footer>
+  <script src="JS.js"></script>
+</body>
+
+</html>
