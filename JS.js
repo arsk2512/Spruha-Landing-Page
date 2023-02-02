@@ -56,6 +56,18 @@ function toggleMenu() {
   }
 }
 
+// var mobileView = window.matchMedia("(max-width: 412px)");
+// mobile_Menu(mobileView);
+// mobileView.addEventListener(mobile_Menu);
+
+// function mobile_Menu(mobileView) {
+// if (mobileView.matches) {
+//   sidebar.style.display="block";
+// }
+
+
+
+// }
 
 
 
@@ -110,7 +122,7 @@ function changeThemeFunc() {
   body.classList.toggle("darkMode");
   if (mode == "light") {
     darkbtn.style.display = "none";
-    lightbtn.style.display= "block";
+    lightbtn.style.display = "block";
     mode = "dark";
   }
   else {

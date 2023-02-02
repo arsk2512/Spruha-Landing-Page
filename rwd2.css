@@ -1,25 +1,29 @@
 @media only screen and (min-width:328px) and (max-width:412px) {
   .sidebar,
-  header .right-sec {
+  header .right-sec div{
     display: none;
   }
 
   header {
     left: 0;
   }
-
-  #closeMenu {
+  .left-sec {
+    align-items: center;
+    gap: 1rem;
+    padding-left: 10px;
+  }
+  
+  #mobile_Menu {
     display: block;
   }
 
-  #closeMenu:hover ~ .sidebar {
-    display: block !important;
-    z-index: 100;
-
-  }
 
   .toggle-menu {
     display: none;
+  }
+
+  header .change-modes {
+    display: flex !important;
   }
 
   main {
@@ -93,11 +97,22 @@
   }
 
   .mainSec .left-sideCards .row4 .card {
-    height: 220px;
+    height: 200px;
   }
 
   .mainSec .left-sideCards .row4 .card .card-title {
     padding-top: 0;
+  }
+
+  .mainSec .left-sideCards .row4 .card1 .card-body .right .round-progress {
+    margin-right: 0;
+    height: 100px;
+    width: 100px;
+  }
+
+  .mainSec .left-sideCards .row4 .card1 .card-body .right .round-progress .inner-circle {
+    height: 80px;
+    width: 80px;
   }
 
   .mainSec .right-sideCards .card2 {

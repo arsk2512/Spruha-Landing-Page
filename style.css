@@ -47,13 +47,13 @@ header {
 }
 
 .toggle-menu span,
-#closeMenu {
+#mobile_Menu {
   font-size: 34px;
   font-weight: 300;
   color: #2f395f;
 }
 
-#closeMenu {
+#mobile_Menu {
   display: none;
 }
 
@@ -208,6 +208,7 @@ header .right-sec {
   height: 0px;
   width: 0px;
 }
+
 /* 
 ::-webkit-scrollbar-track {
   background: #eaedf7 !important ;
@@ -813,6 +814,7 @@ main .mainSec {
   font-weight: 700;
   letter-spacing: 0.2px;
   color: #1d212f;
+  white-space: nowrap;
 }
 
 .mainSec .left-sideCards .row4 .card2 .card-body .row .progress-bar {
@@ -850,6 +852,7 @@ main .mainSec {
   font-size: 13px;
   font-weight: 700;
   color: #1d212f;
+  white-space: nowrap;
 }
 
 .mainSec .left-sideCards .row4 .card2 .card-body .row p span {
@@ -1401,6 +1404,7 @@ footer span {
   background-color: #0e0e23 !important;
   color: #d0d0e2 !important;
 }
+
 .darkMode header .right-sec div:hover,
 .darkMode main,
 .darkMode footer,
