@@ -1,4 +1,4 @@
-@media only screen and (min-width:328px) and (max-width:412px) {
+@media only screen and (min-width:328px) and (max-width:414px) {
   .sidebar,
   header .right-sec div{
     display: none;
@@ -115,6 +115,10 @@
     width: 80px;
   }
 
+  .mainSec .left-sideCards .row4 .card2 .card-body .row .progress-bar {
+    margin-left: 0px;
+  }
+  
   .mainSec .right-sideCards .card2 {
     height: 130px;
   }
