@@ -1,1 +1,1 @@
-This is my First Project in which I have used some JavaScript. I hope you will like it!
+Spruha Dashbaord a practice project for me to learn JavaScript and  attempted to replicate the design as closely as possible 
